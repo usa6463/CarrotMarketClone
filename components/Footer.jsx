@@ -1,4 +1,5 @@
 import {TouchableOpacity, View, Text, StyleSheet, Image} from "react-native";
+import CircleUser from '../assets/circle-user.svg';
 
 export default function Footer() {
     return (
@@ -8,7 +9,7 @@ export default function Footer() {
                 <Text style={styles.buttonText}>홈</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/docs.png')} style={styles.mapMarkerImage} />
+                <Image source={require('../assets/ballot.svg')} style={styles.mapMarkerImage} />
                 <Text style={styles.buttonText}>동네생활</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
@@ -20,7 +21,8 @@ export default function Footer() {
                 <Text style={styles.buttonText}>채팅</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/profile.png')} style={styles.mapMarkerImage} />
+                {/*<Image source={require('../assets/profile.png')} style={styles.mapMarkerImage} />*/}
+                <CircleUser width={60} height={30} fill={"#fff"}></CircleUser>
                 <Text style={styles.buttonText}>나의 당근</Text>
             </TouchableOpacity>
         </View>
@@ -48,9 +50,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#212123',
         padding: 10,
         borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     buttonText: {
         color: '#fff',
         fontWeight: 'bold',
+        marginTop: 10
     },
 });
