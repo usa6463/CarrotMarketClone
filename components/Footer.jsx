@@ -1,28 +1,31 @@
 import {TouchableOpacity, View, Text, StyleSheet, Image} from "react-native";
 import CircleUser from '../assets/circle-user.svg';
+import HouseChimney from '../assets/house-chimney.svg';
+import Memo from '../assets/memo.svg';
+import SearchLocation from '../assets/search-location.svg';
+import Messages from '../assets/messages.svg';
 
 export default function Footer() {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/home.png')} style={styles.mapMarkerImage} />
+                <HouseChimney width={50} height={20} fill={"#fff"}></HouseChimney>
                 <Text style={styles.buttonText}>홈</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/ballot.svg')} style={styles.mapMarkerImage} />
+                <Memo width={60} height={20} fill={"#fff"}></Memo>
                 <Text style={styles.buttonText}>동네생활</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/map.png')} style={styles.mapMarkerImage} />
+                <SearchLocation width={60} height={20} fill={"#fff"}></SearchLocation>
                 <Text style={styles.buttonText}>내 근처</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                <Image source={require('../assets/chat.png')} style={styles.mapMarkerImage} />
+                <Messages width={60} height={20} fill={"#fff"}></Messages>
                 <Text style={styles.buttonText}>채팅</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
-                {/*<Image source={require('../assets/profile.png')} style={styles.mapMarkerImage} />*/}
-                <CircleUser width={60} height={30} fill={"#fff"}></CircleUser>
+                <CircleUser width={60} height={20} fill={"#fff"}></CircleUser>
                 <Text style={styles.buttonText}>나의 당근</Text>
             </TouchableOpacity>
         </View>
