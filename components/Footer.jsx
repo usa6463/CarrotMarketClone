@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         marginRight: 10, // 이미지와 텍스트 사이의 간격 조절
     },
     button: {
-        backgroundColor: '#3498db',
+        backgroundColor: '#212123',
         padding: 10,
         borderRadius: 5,
     },
