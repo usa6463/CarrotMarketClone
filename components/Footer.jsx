@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#212123',
-        paddingVertical: 10,
+        paddingVertical: 0,
         position: 'absolute',
         bottom: 0,
         left: 0,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#fff',
-        fontWeight: 'bold',
-        marginTop: 10
+        marginTop: 10,
+        fontSize: 10
     },
 });
