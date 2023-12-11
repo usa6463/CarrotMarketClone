@@ -4,7 +4,7 @@
 
 
 ## Run
-`npx expo start`
+- https://reactnative.dev/docs/environment-setup 참고
 
 ## REF
 
