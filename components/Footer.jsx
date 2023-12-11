@@ -1,4 +1,4 @@
-import {TouchableOpacity, View, Text, StyleSheet, Image} from "react-native";
+import {TouchableOpacity, View, Text, StyleSheet} from "react-native";
 import CircleUser from '../assets/circle-user.svg';
 import HouseChimney from '../assets/house-chimney.svg';
 import Memo from '../assets/memo.svg';
