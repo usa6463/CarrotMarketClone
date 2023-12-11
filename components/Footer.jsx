@@ -44,11 +44,6 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
     },
-    mapMarkerImage: {
-        width: 20, // 이미지의 폭 조절
-        height: 20, // 이미지의 높이 조절
-        marginRight: 10, // 이미지와 텍스트 사이의 간격 조절
-    },
     button: {
         backgroundColor: '#212123',
         padding: 10,
