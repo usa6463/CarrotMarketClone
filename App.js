@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Footer from "./components/Footer";
+import Home from "./components/Home";
+import TownLife from "./components/TownLife";
+import Near from "./components/Near";
+import Chat from "./components/Chat";
+import MyCarrot from "./components/MyCarrot";
 
 export default function App() {
   const [currentMainPage, setCurrentMainPage] = useState("home")
@@ -12,8 +16,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Carrot Market Clone Coding App : {currentMainPage} </Text>
-      <StatusBar style="auto" />
+      {currentMainPage === "home" && <Home/>}
+      {currentMainPage === "townlife" && <TownLife/>}
+      {currentMainPage === "near" && <Near/>}
+      {currentMainPage === "chat" && <Chat/>}
+      {currentMainPage === "mycarrot" && <MyCarrot/>}
       <Footer onButtonClick={ onButtonClick }/>
     </View>
   );

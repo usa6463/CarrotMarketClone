@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from "react-native";
 export default function MyCarrot() {
     return (
         <View style={styles.container}>
-            <Text>Chat Component!</Text>
+            <Text>MyCarrot Component!</Text>
         </View>
     )
 }
