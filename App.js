@@ -21,7 +21,7 @@ export default function App() {
             {currentMainPage === "near" && <Near/>}
             {currentMainPage === "chat" && <Chat/>}
             {currentMainPage === "mycarrot" && <MyCarrot/>}
-            <Footer onButtonClick={onButtonClick}/>
+            <Footer onButtonClick={onButtonClick} currentMainPage={currentMainPage} />
         </View>
     );
 }

@@ -5,15 +5,20 @@ import Memo from '../assets/memo.svg';
 import SearchLocation from '../assets/search-location.svg';
 import Messages from '../assets/messages.svg';
 
-export default function Footer({onButtonClick}) {
+export default function Footer({ onButtonClick, currentMainPage }) {
     const svg_default_width = 50
     const svg_default_height = 20
-    const svg_default_line_color = "#fff"
+    const svg_default_line_color = "gray"
+    const svg_active_line_color = "#fff"
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.button} onPress={() => onButtonClick("home")}>
-                <HouseChimney width={svg_default_width} height={svg_default_height} fill={svg_default_line_color}></HouseChimney>
-                <Text style={styles.buttonText}>홈</Text>
+                {currentMainPage === "home" ?
+                    (<HouseChimney width={svg_default_width} height={svg_default_height} fill={svg_active_line_color}></HouseChimney>) :
+                    (<HouseChimney width={svg_default_width} height={svg_default_height} fill={svg_default_line_color}></HouseChimney>)}
+                {currentMainPage === "home" ?
+                    (<Text style={styles.activeButtonText}>홈</Text>) :
+                    (<Text style={styles.buttonText}>홈</Text>)}
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => onButtonClick("townlife")}>
                 <Memo width={svg_default_width} height={svg_default_height} fill={svg_default_line_color}></Memo>
@@ -55,6 +60,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     buttonText: {
+        color: 'gray',
+        marginTop: 10,
+        fontSize: 10
+    },
+    activeButtonText: {
         color: '#fff',
         marginTop: 10,
         fontSize: 10
