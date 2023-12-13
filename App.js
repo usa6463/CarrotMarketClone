@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import TownLife from "./components/TownLife";
@@ -16,6 +17,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
+            <StatusBar style="auto" />
             {currentMainPage === "home" && <Home/>}
             {currentMainPage === "townlife" && <TownLife/>}
             {currentMainPage === "near" && <Near/>}
