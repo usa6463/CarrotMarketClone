@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import TownLife from "./components/TownLife";
 import Near from "./components/Near";
 import Chat from "./components/Chat";

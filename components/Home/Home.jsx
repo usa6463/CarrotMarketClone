@@ -1,9 +1,10 @@
 import {ScrollView, StyleSheet, Text, View} from "react-native";
+import Header from "./Header";
 
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Text>지역명</Text>
+            <Header/>
             <ScrollView>
                 <Text>포르쉐 911</Text>
                 <Text>갤럭시 제트폴드3</Text>
@@ -20,10 +21,5 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#212123',
-        paddingVertical: 0,
-        // position: 'absolute',
-        // bottom: 0,
-        // left: 0,
-        // right: 0,
     },
 });
