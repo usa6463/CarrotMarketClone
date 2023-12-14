@@ -42,15 +42,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#212123',
-        paddingVertical: 0,
+        paddingBottom: 30,
+        paddingTop: 10,
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
+        borderTopWidth: 0.25,        // 상단 테두리 두께
+        borderTopColor: 'gray'
     },
     button: {
         backgroundColor: '#212123',
-        padding: 10,
+        padding: 0,
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
