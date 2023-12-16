@@ -13,6 +13,7 @@ export default function Home() {
                 <ScrollView>
                     <Content/>
                     <Content/>
+                    <Content/>
                 </ScrollView>
             </View>
         </View>
@@ -29,6 +30,11 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     contentView: {
-        flex: 7
+        flex: 7,
+        paddingLeft:15,
+        paddingRight:15
+    },
+    scrollView: {
+
     }
 });
