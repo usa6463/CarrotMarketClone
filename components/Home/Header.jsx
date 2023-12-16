@@ -16,8 +16,12 @@ export default function Header() {
             </View>
 
             <View style={styles.rightInnerContainer}>
-                <Search width="20" height="20" fill="white"></Search>
-                <Cowbell width="20" height="20" fill="white"></Cowbell>
+                <TouchableOpacity>
+                    <Search width="20" height="20" fill="white"></Search>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Cowbell width="20" height="20" fill="white"></Cowbell>
+                </TouchableOpacity>
             </View>
         </View>
     )
