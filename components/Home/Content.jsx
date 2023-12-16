@@ -1,4 +1,5 @@
 import {StyleSheet, View, Text} from "react-native";
+import MenuDotsVertical from '../../assets/menu-dots-vertical.svg';
 
 export default function Content() {
     return (
@@ -7,7 +8,9 @@ export default function Content() {
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
                     <View style={styles.textPart}><Text>textPart</Text></View>
-                    <View style={styles.menuPart}><Text>menuPart</Text></View>
+                    <View style={styles.menuPart}>
+                        <MenuDotsVertical width="15" height="15" fill="gray"/>
+                    </View>
                 </View>
                 <View style={styles.lowerMain}>
                     <Text>lowerMain</Text>
