@@ -1,14 +1,16 @@
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import AngleDown from '../../assets/angle-down.svg';
 
 export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.leftInnerContainer}>
-                <Text style={styles.text}>지역명</Text>
-                <View style={styles.angleDownView}>
-                    <AngleDown style={styles.angleDown}></AngleDown>
-                </View>
+                <TouchableOpacity style={styles.leftInnerContainer}>
+                    <Text style={styles.text}>지역명</Text>
+                    <View style={styles.angleDownView}>
+                        <AngleDown style={styles.angleDown}></AngleDown>
+                    </View>
+                </TouchableOpacity>
 
             </View>
             <View style={styles.rightInnerContainer}>
