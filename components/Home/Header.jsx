@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import AngleDown from '../../assets/angle-down.svg';
-import Cowbell from '../../assets/cowbell.svg';
 import Search from '../../assets/search.svg';
+import Bell from '../../assets/bell.svg';
 
 export default function Header() {
     return (
@@ -20,7 +20,7 @@ export default function Header() {
                     <Search width="20" height="20" fill="white"></Search>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Cowbell width="20" height="20" fill="white"></Cowbell>
+                    <Bell width="20" height="20" fill="white"></Bell>
                 </TouchableOpacity>
             </View>
         </View>
