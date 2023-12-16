@@ -1,5 +1,5 @@
 import {StyleSheet, View, Text} from "react-native";
-import MenuDotsVertical from '../../assets/menu-dots-vertical.svg';
+import MenuDotsVertical from '../../assets/component-icon/menu-dots-vertical.svg';
 
 export default function Content() {
     return (

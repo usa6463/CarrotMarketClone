@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import AngleDown from '../../assets/angle-down.svg';
-import Search from '../../assets/search.svg';
-import Bell from '../../assets/bell.svg';
+import AngleDown from '../../assets/component-icon/angle-down.svg';
+import Search from '../../assets/component-icon/search.svg';
+import Bell from '../../assets/component-icon/bell.svg';
 
 export default function Header() {
     return (

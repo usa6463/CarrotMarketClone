@@ -1,9 +1,9 @@
 import {TouchableOpacity, View, Text, StyleSheet} from "react-native";
-import CircleUser from '../assets/circle-user.svg';
-import HouseChimney from '../assets/house-chimney.svg';
-import Memo from '../assets/memo.svg';
-import SearchLocation from '../assets/search-location.svg';
-import Messages from '../assets/messages.svg';
+import CircleUser from '../assets/component-icon/circle-user.svg';
+import HouseChimney from '../assets/component-icon/house-chimney.svg';
+import Memo from '../assets/component-icon/memo.svg';
+import SearchLocation from '../assets/component-icon/search-location.svg';
+import Messages from '../assets/component-icon/messages.svg';
 
 export default function Footer({ onButtonClick, currentMainPage }) {
     const svg_default_width = 50
