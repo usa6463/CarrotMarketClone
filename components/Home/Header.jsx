@@ -1,6 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import AngleDown from '../../assets/angle-down.svg';
 import Cowbell from '../../assets/cowbell.svg';
+import Search from '../../assets/search.svg';
 
 export default function Header() {
     return (
@@ -12,12 +13,11 @@ export default function Header() {
                         <AngleDown style={styles.angleDown}></AngleDown>
                     </View>
                 </TouchableOpacity>
-
             </View>
+
             <View style={styles.rightInnerContainer}>
-                <Text style={styles.text}>검색</Text>
+                <Search width="20" height="20" fill="white"></Search>
                 <Cowbell width="20" height="20" fill="white"></Cowbell>
-                {/*<Text style={styles.text}>알람</Text>*/}
             </View>
         </View>
     )
@@ -38,14 +38,15 @@ const styles = StyleSheet.create({
         borderBottomColor: 'gray',
     },
     leftInnerContainer: {
-        flex:1,
+        flex:3,
         flexDirection: 'row',
         justifyContent: 'flex-start'
     },
     rightInnerContainer: {
-        flex:0.4,
+        flex:1,
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        marginBottom: 20,
     },
     text: {
         color: 'white',
