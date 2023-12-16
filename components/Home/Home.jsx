@@ -1,5 +1,6 @@
 import {ScrollView, StyleSheet, Text, View} from "react-native";
 import Header from "./Header";
+import Content from "./Content";
 
 export default function Home() {
     return (
@@ -10,8 +11,8 @@ export default function Home() {
 
             <View style={styles.contentView}>
                 <ScrollView>
-                    <Text>포르쉐 911</Text>
-                    <Text>갤럭시 제트폴드3</Text>
+                    <Content/>
+                    <Content/>
                 </ScrollView>
             </View>
         </View>
