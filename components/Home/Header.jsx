@@ -43,9 +43,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
     rightInnerContainer: {
-        flex:1,
+        flex:0.4,
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'space-around'
     },
     text: {
         color: 'white',
