@@ -1,5 +1,6 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import AngleDown from '../../assets/angle-down.svg';
+import Cowbell from '../../assets/cowbell.svg';
 
 export default function Header() {
     return (
@@ -15,7 +16,8 @@ export default function Header() {
             </View>
             <View style={styles.rightInnerContainer}>
                 <Text style={styles.text}>검색</Text>
-                <Text style={styles.text}>알람</Text>
+                <Cowbell width="20" height="20" fill="white"></Cowbell>
+                {/*<Text style={styles.text}>알람</Text>*/}
             </View>
         </View>
     )
