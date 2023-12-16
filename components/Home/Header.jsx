@@ -1,10 +1,15 @@
 import {StyleSheet, Text, View} from "react-native";
+import AngleDown from '../../assets/angle-down.svg';
 
 export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.leftInnerContainer}>
                 <Text style={styles.text}>지역명</Text>
+                <View style={styles.angleDownView}>
+                    <AngleDown style={styles.angleDown}></AngleDown>
+                </View>
+
             </View>
             <View style={styles.rightInnerContainer}>
                 <Text style={styles.text}>검색</Text>
@@ -40,9 +45,18 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        fontSize: 20,
-        marginLeft: 10,
+        fontSize: 17,
+        marginLeft: 20,
         marginBottom: 20,
         fontWeight: 'bold'
+    },
+    angleDownView: {
+        flexDirection: 'row',
+        marginTop: 2
+    },
+    angleDown: {
+        width: "22",
+        height: "13",
+        fill: "white"
     }
 });
