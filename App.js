@@ -18,12 +18,16 @@ export default function App() {
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
-            {currentMainPage === "home" && <Home/>}
-            {currentMainPage === "townlife" && <TownLife/>}
-            {currentMainPage === "near" && <Near/>}
-            {currentMainPage === "chat" && <Chat/>}
-            {currentMainPage === "mycarrot" && <MyCarrot/>}
-            <Footer onButtonClick={onButtonClick} currentMainPage={currentMainPage} />
+            <View style={styles.mainView}>
+                {currentMainPage === "home" && <Home/>}
+                {currentMainPage === "townlife" && <TownLife/>}
+                {currentMainPage === "near" && <Near/>}
+                {currentMainPage === "chat" && <Chat/>}
+                {currentMainPage === "mycarrot" && <MyCarrot/>}
+            </View>
+            <View style={styles.footerView}>
+                <Footer onButtonClick={onButtonClick} currentMainPage={currentMainPage} />
+            </View>
         </View>
     );
 }
@@ -32,7 +36,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
+    mainView: {
+        flex: 10,
+    },
+    footerView: {
+        flex: 1,
+    }
 });

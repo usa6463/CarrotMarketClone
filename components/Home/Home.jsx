@@ -4,11 +4,16 @@ import Header from "./Header";
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Header/>
-            <ScrollView>
-                <Text>포르쉐 911</Text>
-                <Text>갤럭시 제트폴드3</Text>
-            </ScrollView>
+            <View style={styles.headerView}>
+                <Header/>
+            </View>
+
+            <View style={styles.contentView}>
+                <ScrollView>
+                    <Text>포르쉐 911</Text>
+                    <Text>갤럭시 제트폴드3</Text>
+                </ScrollView>
+            </View>
         </View>
 
     )
@@ -17,9 +22,12 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
         backgroundColor: '#212123',
     },
+    headerView: {
+        flex: 1,
+    },
+    contentView: {
+        flex: 7
+    }
 });

@@ -32,16 +32,12 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'row',
         alignItems: 'flex-end',
-        backgroundColor: '#212123',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: 90,
         borderBottomWidth: 0.25,
         borderBottomColor: 'gray',
+        paddingBottom: 15,
     },
     leftInnerContainer: {
+        paddingLeft: 8,
         flex:3,
         flexDirection: 'row',
         justifyContent: 'flex-start'
@@ -50,13 +46,10 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginBottom: 20,
     },
     text: {
         color: 'white',
-        fontSize: 17,
-        marginLeft: 20,
-        marginBottom: 20,
+        fontSize: 18,
         fontWeight: 'bold'
     },
     angleDownView: {

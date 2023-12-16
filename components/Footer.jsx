@@ -38,25 +38,17 @@ export default function Footer({ onButtonClick, currentMainPage }) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
-        alignItems: 'center',
+        alignItems: "flex-start",
         backgroundColor: '#212123',
-        paddingBottom: 30,
         paddingTop: 10,
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
         borderTopWidth: 0.25,        // 상단 테두리 두께
         borderTopColor: 'gray'
     },
     button: {
-        backgroundColor: '#212123',
-        padding: 0,
-        borderRadius: 5,
         alignItems: 'center',
-        justifyContent: 'center',
     },
     buttonText: {
         color: 'gray',
