@@ -1,11 +1,20 @@
-import {StyleSheet, View} from "react-native";
+import {StyleSheet, View, Text} from "react-native";
 
 export default function Content() {
     return (
         <View style={styles.container}>
-            <View style={styles.imgPart}></View>
-            <View style={styles.contentPart}></View>
-            <View style={styles.menuPart}></View>
+            <View style={styles.imgPart}><Text>image</Text></View>
+            <View style={styles.mainPart}>
+                <View style={styles.upperMain}>
+                    <View style={styles.textPart}><Text>textPart</Text></View>
+                    <View style={styles.menuPart}><Text>menuPart</Text></View>
+                </View>
+                <View style={styles.lowerMain}>
+                    <Text>lowerMain</Text>
+                </View>
+
+            </View>
+
         </View>
     )
 }
@@ -22,9 +31,21 @@ const styles = StyleSheet.create({
         height: 100
     },
     imgPart: {
-        flex:2,
+        flex:1,
     },
-    contentPart: {
+    mainPart: {
+        flex:3
+    },
+    upperMain: {
+        flex:3,
+        flexDirection:'row'
+    },
+    lowerMain: {
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'flex-end'
+    },
+    textPart: {
         flex:5,
     },
     menuPart: {
