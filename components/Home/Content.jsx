@@ -5,13 +5,15 @@ export default function Content({img, textPart, lowerMain}) {
     return (
         <View style={styles.container}>
             <View style={styles.imgPart}>
-                <Image source={img}
-                       style={styles.img}
-                />
+                <Image source={img} style={styles.img}/>
             </View>
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
-                    <View style={styles.textPart}><Text>textPart</Text></View>
+                    <View style={styles.textPart}>
+                        <Text style={styles.contentTitle} numberOfLines={2} ellipsizeMode="tail">{textPart.title}</Text>
+                        <Text style={styles.contentSubInfo}>{textPart.sub_info}</Text>
+                        <Text style={styles.contentPrice}>{textPart.price}</Text>
+                    </View>
                     <View style={styles.menuPart}>
                         <MenuDotsVertical width="15" height="15" fill="gray"/>
                     </View>
@@ -60,6 +62,19 @@ const styles = StyleSheet.create({
     },
     textPart: {
         flex:5,
+    },
+    contentTitle: {
+        color:'white',
+        fontSize: 16,
+    },
+    contentSubInfo: {
+        color:'gray',
+        fontSize: 13
+    },
+    contentPrice: {
+        color:'white',
+        fontWeight:'bold',
+        fontSize:'17'
     },
     menuPart: {
         flex:1,
