@@ -11,9 +11,9 @@ export default function Home() {
 
             <View style={styles.contentView}>
                 <ScrollView>
-                    <Content/>
-                    <Content/>
-                    <Content/>
+                    <Content img={"../../assets/sample-data/home/sell_product_img1.jpeg"}/>
+                    <Content img={"../../assets/sample-data/home/sell_product_img2.jpeg"}/>
+                    <Content img={"../../assets/sample-data/home/sell_product_img3.jpeg"}/>
                 </ScrollView>
             </View>
         </View>

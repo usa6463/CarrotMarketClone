@@ -1,10 +1,12 @@
-import {StyleSheet, View, Text} from "react-native";
+import {StyleSheet, View, Text, Image} from "react-native";
 import MenuDotsVertical from '../../assets/component-icon/menu-dots-vertical.svg';
 
-export default function Content() {
+export default function Content({img, textPart, lowerMain}) {
     return (
         <View style={styles.container}>
-            <View style={styles.imgPart}><Text>image</Text></View>
+            <View style={styles.imgPart}>
+                <Image source={require('../../assets/sample-data/home/sell_product_img1.jpeg')} style={styles.img}/>
+            </View>
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
                     <View style={styles.textPart}><Text>textPart</Text></View>
@@ -31,13 +33,19 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.25,
         borderBottomColor: 'gray',
         paddingBottom: 10,
-        height: 100
+        height: 140
     },
     imgPart: {
         flex:1,
     },
+    img: {
+        flex: 1,
+        width: null,
+        height: null,
+        borderRadius: "10"
+    },
     mainPart: {
-        flex:3
+        flex:2
     },
     upperMain: {
         flex:3,
