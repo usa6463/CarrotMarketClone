@@ -1,7 +1,9 @@
 import {StyleSheet, View, Text, Image} from "react-native";
 import MenuDotsVertical from '../../assets/component-icon/menu-dots-vertical.svg';
+import Messages from '../../assets/component-icon/messages.svg';
+import Heart from '../../assets/component-icon/heart.svg';
 
-export default function Content({img, textPart, lowerMain}) {
+export default function Content({img, data}) {
     return (
         <View style={styles.container}>
             <View style={styles.imgPart}>
@@ -10,20 +12,39 @@ export default function Content({img, textPart, lowerMain}) {
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
                     <View style={styles.textPart}>
-                        <Text style={styles.contentTitle} numberOfLines={2} ellipsizeMode="tail">{textPart.title}</Text>
-                        <Text style={styles.contentSubInfo}>{textPart.sub_info}</Text>
-                        <Text style={styles.contentPrice}>{textPart.price}</Text>
+                        <Text style={styles.contentTitle} numberOfLines={2} ellipsizeMode="tail">{data.title}</Text>
+                        <Text style={styles.contentSubInfo}>{data.sub_info}</Text>
+                        <Text style={styles.contentPrice}>{data.price}</Text>
                     </View>
                     <View style={styles.menuPart}>
                         <MenuDotsVertical width="15" height="15" fill="gray"/>
                     </View>
                 </View>
                 <View style={styles.lowerMain}>
-                    <Text>lowerMain</Text>
+                    {data.chat > 0 ?  getChatInfo(data):<Text/> }
+                    {data.interest > 0 ? getInterestInfo(data):<Text/> }
                 </View>
 
             </View>
 
+        </View>
+    )
+}
+
+function getChatInfo(data) {
+    return (
+        <View flexDirection={'row'}>
+            <Messages width={10} height={10} fill={'white'}></Messages>
+            <Text>{data.chat}</Text>
+        </View>
+    )
+}
+
+function getInterestInfo(data) {
+    return (
+        <View flexDirection={'row'}>
+            <Heart width={10} height={10} fill={'white'}></Heart>
+            <Text>{data.interest}</Text>
         </View>
     )
 }
