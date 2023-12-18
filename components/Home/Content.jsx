@@ -5,7 +5,9 @@ export default function Content({img, textPart, lowerMain}) {
     return (
         <View style={styles.container}>
             <View style={styles.imgPart}>
-                <Image source={require('../../assets/sample-data/home/sell_product_img1.jpeg')} style={styles.img}/>
+                <Image source={img}
+                       style={styles.img}
+                />
             </View>
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
