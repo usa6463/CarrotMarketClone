@@ -24,9 +24,7 @@ export default function Content({img, data}) {
                     {data.chat > 0 ?  getChatInfo(data):<Text/> }
                     {data.interest > 0 ? getInterestInfo(data):<Text/> }
                 </View>
-
             </View>
-
         </View>
     )
 }
@@ -65,9 +63,9 @@ const styles = StyleSheet.create({
     },
     img: {
         flex: 1,
-        width: null,
-        height: null,
-        borderRadius: "10"
+        width: undefined,
+        height: undefined,
+        borderRadius: 10
     },
     mainPart: {
         flex:2,
@@ -112,7 +110,7 @@ const styles = StyleSheet.create({
     contentPrice: {
         color:'white',
         fontWeight:'bold',
-        fontSize:'17'
+        fontSize:17
     },
     menuPart: {
         flex:1,
