@@ -33,18 +33,18 @@ export default function Content({img, data}) {
 
 function getChatInfo(data) {
     return (
-        <View flexDirection={'row'}>
-            <Messages width={10} height={10} fill={'white'}></Messages>
-            <Text>{data.chat}</Text>
+        <View style={styles.lowerMainPart}>
+            <Messages style={styles.lowerMainIcon}></Messages>
+            <Text style={styles.lowerMainText}>{data.chat}</Text>
         </View>
     )
 }
 
 function getInterestInfo(data) {
     return (
-        <View flexDirection={'row'}>
-            <Heart width={10} height={10} fill={'white'}></Heart>
-            <Text>{data.interest}</Text>
+        <View style={styles.lowerMainPart}>
+            <Heart style={styles.lowerMainIcon}></Heart>
+            <Text style={styles.lowerMainText}>{data.interest}</Text>
         </View>
     )
 }
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         borderRadius: "10"
     },
     mainPart: {
-        flex:2
+        flex:2,
+        paddingLeft: 15
     },
     upperMain: {
         flex:3,
@@ -79,10 +80,26 @@ const styles = StyleSheet.create({
     lowerMain: {
         flex:1,
         flexDirection:'row',
-        justifyContent:'flex-end'
+        justifyContent:'flex-end',
+        alignItems:'center'
+    },
+    lowerMainPart: {
+        flexDirection: 'row',
+        paddingLeft: 10
+    },
+    lowerMainText: {
+        fontSize: 14,
+        color: 'gray',
+        paddingLeft: 3
+    },
+    lowerMainIcon: {
+        width:'14',
+        height:'14',
+        fill:'gray'
     },
     textPart: {
         flex:5,
+        justifyContent:'space-around'
     },
     contentTitle: {
         color:'white',
@@ -99,5 +116,7 @@ const styles = StyleSheet.create({
     },
     menuPart: {
         flex:1,
+        alignItems: 'flex-end',
+        paddingTop:7
     }
 });
