@@ -4,6 +4,7 @@ import Content from "./Content";
 
 export default function Home() {
     const data1 = {
+        "img": require("../../assets/sample-data/home/sell_product_img1.jpeg"),
         "title": "중고 컴퓨터 팝니다ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ",
         "sub_info" : "삼전동 · 39분전",
         "price" : "3,000원",
@@ -18,7 +19,7 @@ export default function Home() {
 
             <View style={styles.contentView}>
                 <ScrollView>
-                    <Content img={require("../../assets/sample-data/home/sell_product_img1.jpeg")} data={data1}/>
+                    <Content data={data1}/>
                 </ScrollView>
             </View>
         </View>
