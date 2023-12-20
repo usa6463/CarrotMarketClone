@@ -3,11 +3,11 @@ import MenuDotsVertical from '../../assets/component-icon/menu-dots-vertical.svg
 import Messages from '../../assets/component-icon/messages.svg';
 import Heart from '../../assets/component-icon/heart.svg';
 
-export default function Content({data}) {
+export default function Content({img, data}) {
     return (
         <View style={styles.container}>
             <View style={styles.imgPart}>
-                <Image source={data.img} style={styles.img}/>
+                <Image source={img} style={styles.img}/>
             </View>
             <View style={styles.mainPart}>
                 <View style={styles.upperMain}>
