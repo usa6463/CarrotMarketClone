@@ -93,18 +93,21 @@ export default function Home() {
                 <Header/>
             </View>
 
+
             <View style={styles.contentView}>
                 <ScrollView>
-                    {
-                        Object.keys(responseFromAPI).map((key) =>
-                        (
-                            <Content
-                                img={responseFromAPI[key].img}
-                                data={responseFromAPI[key]}
-                                key={responseFromAPI[key].key}
-                            />
-                        ))
-                    }
+                    <View style={styles.innerContentView}>
+                        {
+                            Object.keys(responseFromAPI).map((key) =>
+                            (
+                                <Content
+                                    img={responseFromAPI[key].img}
+                                    data={responseFromAPI[key]}
+                                    key={responseFromAPI[key].key}
+                                />
+                            ))
+                        }
+                    </View>
                 </ScrollView>
             </View>
         </View>
@@ -122,6 +125,8 @@ const styles = StyleSheet.create({
     },
     contentView: {
         flex: 7,
+    },
+    innerContentView: {
         paddingLeft:15,
         paddingRight:15
     },
