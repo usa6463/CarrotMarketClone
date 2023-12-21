@@ -10,3 +10,9 @@
 
 아이콘 참조 
 - https://www.flaticon.com/
+
+## expo 관련
+
+```
+npx expo install react-native-screens react-native-safe-area-context
+```
