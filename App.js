@@ -7,6 +7,7 @@ import TownLife from "./components/TownLife";
 import Near from "./components/Near";
 import Chat from "./components/Chat";
 import MyCarrot from "./components/MyCarrot";
+import {NavigationContainer} from '@react-navigation/native';
 
 export default function App() {
     const [currentMainPage, setCurrentMainPage] = useState("home")
@@ -16,19 +17,21 @@ export default function App() {
     }
 
     return (
-        <View style={styles.container}>
-            <StatusBar style="light" />
-            <View style={styles.mainView}>
-                {currentMainPage === "home" && <Home/>}
-                {currentMainPage === "townlife" && <TownLife/>}
-                {currentMainPage === "near" && <Near/>}
-                {currentMainPage === "chat" && <Chat/>}
-                {currentMainPage === "mycarrot" && <MyCarrot/>}
+        <NavigationContainer>
+            <View style={styles.container}>
+                <StatusBar style="light" />
+                <View style={styles.mainView}>
+                    {currentMainPage === "home" && <Home/>}
+                    {currentMainPage === "townlife" && <TownLife/>}
+                    {currentMainPage === "near" && <Near/>}
+                    {currentMainPage === "chat" && <Chat/>}
+                    {currentMainPage === "mycarrot" && <MyCarrot/>}
+                </View>
+                <View style={styles.footerView}>
+                    <Footer onButtonClick={onButtonClick} currentMainPage={currentMainPage} />
+                </View>
             </View>
-            <View style={styles.footerView}>
-                <Footer onButtonClick={onButtonClick} currentMainPage={currentMainPage} />
-            </View>
-        </View>
+        </NavigationContainer>
     );
 }
 
