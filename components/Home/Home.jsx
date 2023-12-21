@@ -10,7 +10,8 @@ export default function Home() {
             "sub_info": "삼전동 · 39분전",
             "price": "3,000원",
             "interest": 10,
-            "chat": 3
+            "chat": 3,
+            "key": 1
         },
         "data2": {
             "img": require("../../assets/sample-data/home/sell_product_img2.jpeg"),
@@ -18,6 +19,7 @@ export default function Home() {
             "sub_info": "망원동 · 1분전",
             "price": "20,000원",
             "interest": 15,
+            "key": 2,
             "chat": 6
         },
         "data3": {
@@ -26,6 +28,7 @@ export default function Home() {
             "sub_info": "강남구 · 10분전",
             "price": "15,000원",
             "interest": 8,
+            "key": 3,
             "chat": 2
         },
         "data4": {
@@ -34,6 +37,7 @@ export default function Home() {
             "sub_info": "홍대입구 · 5분전",
             "price": "8,000원",
             "interest": 12,
+            "key": 4,
             "chat": 4
         },
         "data5": {
@@ -42,6 +46,7 @@ export default function Home() {
             "sub_info": "신촌 · 20분전",
             "price": "25,000원",
             "interest": 18,
+            "key": 5,
             "chat": 7
         },
         "data6": {
@@ -50,6 +55,7 @@ export default function Home() {
             "sub_info": "서초구 · 15분전",
             "price": "12,000원",
             "interest": 14,
+            "key": 6,
             "chat": 5
         },
         "data7": {
@@ -58,6 +64,7 @@ export default function Home() {
             "sub_info": "잠실 · 8분전",
             "price": "18,000원",
             "interest": 11,
+            "key": 7,
             "chat": 3
         },
         "data8": {
@@ -66,6 +73,7 @@ export default function Home() {
             "sub_info": "건대입구 · 25분전",
             "price": "30,000원",
             "interest": 20,
+            "key": 8,
             "chat": 9
         },
         "data9": {
@@ -74,6 +82,7 @@ export default function Home() {
             "sub_info": "논현동 · 12분전",
             "price": "22,000원",
             "interest": 16,
+            "key": 9,
             "chat": 6
         },
     }
@@ -92,6 +101,7 @@ export default function Home() {
                             <Content
                                 img={responseFromAPI[key].img}
                                 data={responseFromAPI[key]}
+                                key={responseFromAPI[key].key}
                             />
                         ))
                     }
