@@ -8,7 +8,7 @@ import Near from "./Near";
 import Chat from "./Chat";
 import MyCarrot from "./MyCarrot";
 
-export default function App() {
+export default function Main() {
     const [currentMainPage, setCurrentMainPage] = useState("home")
 
     const onButtonClick = (componentName) => {
