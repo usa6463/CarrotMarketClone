@@ -2,12 +2,12 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export default function UsedTradeProductDetail() {
+export default function UsedTradeProductDetail({navigation, route}) {
 
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
-            <Text>안녕하세요</Text>
+            <Text>안녕하세요 {route.params.name}</Text>
         </View>
     );
 }

@@ -8,7 +8,7 @@ import Near from "./Near";
 import Chat from "./Chat";
 import MyCarrot from "./MyCarrot";
 
-export default function Main() {
+export default function Main({navigation}) {
     const [currentMainPage, setCurrentMainPage] = useState("home")
 
     const onButtonClick = (componentName) => {
@@ -19,7 +19,7 @@ export default function Main() {
         <View style={styles.container}>
             <StatusBar style="light" />
             <View style={styles.mainView}>
-                {currentMainPage === "home" && <Home/>}
+                {currentMainPage === "home" && <Home navigation={navigation}/>}
                 {currentMainPage === "townlife" && <TownLife/>}
                 {currentMainPage === "near" && <Near/>}
                 {currentMainPage === "chat" && <Chat/>}

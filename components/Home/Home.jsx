@@ -1,8 +1,12 @@
-import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Header from "./Header";
 import Content from "./Content";
 
-export default function Home() {
+export default function Home({navigation}) {
+    const onUsedTradeProductDetailClick = () => {
+        navigation.navigate('UsedTradeProductDetail', {name: 'Jane'})
+    }
+
     const responseFromAPI = {
         "data1": {
             "img": require("../../assets/sample-data/home/sell_product_img1.jpeg"),
@@ -100,11 +104,12 @@ export default function Home() {
                         {
                             Object.keys(responseFromAPI).map((key) =>
                             (
-                                <Content
-                                    img={responseFromAPI[key].img}
-                                    data={responseFromAPI[key]}
-                                    key={responseFromAPI[key].key}
-                                />
+                                <TouchableOpacity key={responseFromAPI[key].key} onPress={() => onUsedTradeProductDetailClick()}>
+                                    <Content
+                                        img={responseFromAPI[key].img}
+                                        data={responseFromAPI[key]}
+                                    />
+                                </TouchableOpacity>
                             ))
                         }
                     </View>
