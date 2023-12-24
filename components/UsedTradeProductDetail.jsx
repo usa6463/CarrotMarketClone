@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function UsedTradeProductDetail({navigation, route}) {
@@ -15,6 +15,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#212123',
     },
 });
