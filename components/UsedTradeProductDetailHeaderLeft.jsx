@@ -1,19 +1,20 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import MenuDotsVertical from '../assets/component-icon/menu-dots-vertical.svg';
-import ShareSquare from '../assets/component-icon/share-square.svg';
+import AngleLeft from '../assets/component-icon/angle-left.svg';
+import HouseChimney from '../assets/component-icon/house-chimney.svg';
 
-export default function UsedTradeProductDetailHeaderRight() {
+export default function UsedTradeProductDetailHeaderLeft() {
 
     return (
         <View style={styles.container}>
             <TouchableOpacity style={{marginRight: 25}}>
-                <ShareSquare width="20" height="20" fill="white"/>
+                <AngleLeft width="20" height="20" fill="white"></AngleLeft>
             </TouchableOpacity>
             <TouchableOpacity>
-                <MenuDotsVertical width="20" height="20" fill="white"/>
+                <HouseChimney width="20" height="20" fill="white"></HouseChimney>
             </TouchableOpacity>
         </View>
+
     );
 }
 

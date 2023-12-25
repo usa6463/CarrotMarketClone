@@ -5,6 +5,7 @@ import UsedTradeProductDetail from "./components/UsedTradeProductDetail"
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import UsedTradeProductDetailHeaderRight from "./components/UsedTradeProductDetailHeaderRight";
+import UsedTradeProductDetailHeaderLeft from "./components/UsedTradeProductDetailHeaderLeft";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
                     component={UsedTradeProductDetail}
                     options={{
                         title: "",
+                        headerLeft: UsedTradeProductDetailHeaderLeft,
                         headerRight: UsedTradeProductDetailHeaderRight}}
                 />
             </Stack.Navigator>
