@@ -3,8 +3,8 @@ import Header from "./Header";
 import Content from "./Content";
 
 export default function Home({navigation}) {
-    const onUsedTradeProductDetailClick = () => {
-        navigation.navigate('UsedTradeProductDetail', {name: 'Jane'})
+    const onUsedTradeProductDetailClick = (id) => {
+        navigation.navigate('UsedTradeProductDetail', {name: id})
     }
 
     const responseFromAPI = {
@@ -104,7 +104,7 @@ export default function Home({navigation}) {
                         {
                             Object.keys(responseFromAPI).map((key) =>
                             (
-                                <TouchableOpacity key={responseFromAPI[key].key} onPress={() => onUsedTradeProductDetailClick()}>
+                                <TouchableOpacity key={responseFromAPI[key].key} onPress={() => onUsedTradeProductDetailClick(responseFromAPI[key].key)}>
                                     <Content
                                         img={responseFromAPI[key].img}
                                         data={responseFromAPI[key]}
