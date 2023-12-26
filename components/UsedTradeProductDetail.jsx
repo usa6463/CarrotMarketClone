@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { SliderBox } from "react-native-image-slider-box";
 
 export default function UsedTradeProductDetail({navigation, route}) {
 
@@ -8,31 +9,31 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     const sample = {
         "1": {
-            "img": require("../assets/sample-data/home/sell_product_img1.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img1.jpeg"),require("../assets/sample-data/home/sell_product_img2.jpeg")]
         },
         "2": {
-            "img": require("../assets/sample-data/home/sell_product_img2.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img2.jpeg")]
         },
         "3": {
-            "img": require("../assets/sample-data/home/sell_product_img3.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img3.jpeg")]
         },
         "4": {
-            "img": require("../assets/sample-data/home/sell_product_img4.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img4.jpeg")]
         },
         "5": {
-            "img": require("../assets/sample-data/home/sell_product_img5.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img5.jpeg")]
         },
         "6": {
-            "img": require("../assets/sample-data/home/sell_product_img6.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img6.jpeg")]
         },
         "7": {
-            "img": require("../assets/sample-data/home/sell_product_img7.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img7.jpeg")]
         },
         "8": {
-            "img": require("../assets/sample-data/home/sell_product_img8.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img8.jpeg")]
         },
         "9": {
-            "img": require("../assets/sample-data/home/sell_product_img9.jpeg")
+            "img": [require("../assets/sample-data/home/sell_product_img9.jpeg")]
         }
     };
 
@@ -40,9 +41,14 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     return (
         <View style={styles.container}>
-            <Image source={data.img} />
-            <StatusBar style="light" />
-            <Text>안녕하세요 {route.params.id}</Text>
+            <View>
+
+            </View>
+            <ScrollView>
+                <SliderBox images={data.img} />
+                <StatusBar style="light" />
+                <Text>안녕하세요 {route.params.id}</Text>
+            </ScrollView>
         </View>
     );
 }
