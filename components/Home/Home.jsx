@@ -4,7 +4,7 @@ import Content from "./Content";
 
 export default function Home({navigation}) {
     const onUsedTradeProductDetailClick = (id) => {
-        navigation.navigate('UsedTradeProductDetail', {name: id})
+        navigation.navigate('UsedTradeProductDetail', {id: id})
     }
 
     const responseFromAPI = {
