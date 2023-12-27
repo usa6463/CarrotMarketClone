@@ -1,9 +1,13 @@
-import React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Modal, ScrollView, StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
+import ImageViewer from 'react-native-image-zoom-viewer';
 
 export default function UsedTradeProductDetail({navigation, route}) {
+
+    const [imageViewer, setImageViewer] = useState(false)
+    const [curImageViewerIndex, setCurImageViewerIndex] = useState(0)
 
     // TODO 원래는 route.params.id 으로 글 번호를 받아오고 이 글번호로 API 호출하여 정보 받아와야 한다.
 
@@ -42,10 +46,19 @@ export default function UsedTradeProductDetail({navigation, route}) {
     return (
         <View style={styles.container}>
             <View>
-
+                <Modal visible={imageViewer} transparent={true}>
+                    <ImageViewer imageUrls={data.img.map((element)=>({
+                        props: {
+                            source: element
+                        }
+                    }))} index={curImageViewerIndex}/>
+                </Modal>
             </View>
             <ScrollView>
-                <SliderBox images={data.img} />
+                <SliderBox images={data.img} onCurrentImagePressed={(index)=>{
+                    setImageViewer(true)
+                    setCurImageViewerIndex(index)
+                }}/>
                 <StatusBar style="light" />
                 <Text>안녕하세요 {route.params.id}</Text>
             </ScrollView>
