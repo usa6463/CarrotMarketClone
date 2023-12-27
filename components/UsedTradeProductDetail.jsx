@@ -51,7 +51,10 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         props: {
                             source: element
                         }
-                    }))} index={curImageViewerIndex}/>
+                    }))} index={curImageViewerIndex} enableSwipeDown={true}
+                                 onCancel = {()=>setImageViewer(false)}
+
+                    />
                 </Modal>
             </View>
             <ScrollView>
