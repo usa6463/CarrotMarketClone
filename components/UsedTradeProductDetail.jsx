@@ -3,6 +3,7 @@ import {Modal, ScrollView, StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
 import ImageViewer from 'react-native-image-zoom-viewer';
+import ImageViewerHeader from "./ImageViewerHeader";
 
 export default function UsedTradeProductDetail({navigation, route}) {
 
@@ -57,6 +58,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         enableSwipeDown={true}
                         onCancel = {()=>setImageViewer(false)}
                         onChange = {(index) =>setCurImageViewerIndex(index)}
+                        renderHeader = {(currentIndex) => ImageViewerHeader(currentIndex)}
                     />
                 </Modal>
             </View>
