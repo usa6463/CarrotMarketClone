@@ -1,18 +1,21 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import X from '../assets/component-icon/x.svg';
 
 export default function ImageViewerHeader() {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Heelo</Text>
+            <TouchableOpacity>
+                <X width="20" height="20" fill="white"/>
+            </TouchableOpacity>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        // flexDirection: 'row',
-        backgroundColor:'blue'
+        marginTop:50,
+        marginLeft:20
     },
     text : {
         color:'white'

@@ -47,7 +47,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
     return (
         <View style={styles.container}>
             <View>
-                <Modal visible={imageViewer} transparent={true}>
+                <Modal visible={imageViewer} transparent={true} animationType={"slide"}>
                     <ImageViewer
                         imageUrls={data.img.map((element)=>({
                             props: {
