@@ -2,10 +2,10 @@ import React from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import X from '../assets/component-icon/x.svg';
 
-export default function ImageViewerHeader() {
+export default function ImageViewerHeader(onExitButtonClick) {
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {onExitButtonClick(false)}}>
                 <X width="20" height="20" fill="white"/>
             </TouchableOpacity>
         </View>

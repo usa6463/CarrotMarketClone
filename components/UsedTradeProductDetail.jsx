@@ -42,6 +42,10 @@ export default function UsedTradeProductDetail({navigation, route}) {
         }
     };
 
+    const onExitButtonClick = (status) => {
+        setImageViewer(status)
+    }
+
     const data = sample[route.params.id]
 
     return (
@@ -58,7 +62,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         enableSwipeDown={true}
                         onCancel = {()=>setImageViewer(false)}
                         onChange = {(index) =>setCurImageViewerIndex(index)}
-                        renderHeader = {(currentIndex) => ImageViewerHeader(currentIndex)}
+                        renderHeader = {() => ImageViewerHeader(onExitButtonClick)}
                     />
                 </Modal>
             </View>
