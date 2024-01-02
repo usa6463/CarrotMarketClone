@@ -14,6 +14,8 @@ export default function ImageViewerHeader() {
 
 const styles = StyleSheet.create({
     container: {
+        position: 'absolute',
+        zIndex:1,
         marginTop:50,
         marginLeft:20
     },
