@@ -1,4 +1,5 @@
 import React from 'react';
+import Animated from 'react-native-reanimated';
 import Main from "./components/Main"
 import UsedTradeProductDetail from "./components/UsedTradeProductDetail"
 
@@ -10,17 +11,28 @@ import UsedTradeProductDetailHeaderLeft from "./components/UsedTradeProductDetai
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
     return (
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
                     headerStyle: {
-                        backgroundColor: '#212123',
+                        backgroundColor: 'transparent',
                     },
+                    headerTransparent: true,
                     headerTintColor: '#fff',
                     headerTitleStyle: {
                         fontWeight: 'bold',
                     },
+                    // headerBackground: () => (
+                    //     <Animated.View
+                    //         style={{
+                    //             backgroundColor: '#212123', // 스크롤 다운 시 나타날 색상
+                    //             height: headerHeight,
+                    //         }}
+                    //     />
+                    // ),
+
                 }}>
                 <Stack.Screen
                     name="Main"
