@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, Modal, ScrollView, StyleSheet, Text, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -14,7 +14,8 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     const sample = {
         "1": {
-            "img": [require("../assets/sample-data/home/sell_product_img1.jpeg"),require("../assets/sample-data/home/sell_product_img2.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img1.jpeg"),require("../assets/sample-data/home/sell_product_img2.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg")
         },
         "2": {
             "img": [require("../assets/sample-data/home/sell_product_img2.jpeg")]
@@ -79,7 +80,10 @@ export default function UsedTradeProductDetail({navigation, route}) {
                 <StatusBar style="light" />
                 <View style={styles.userInfoView}>
                     <View style={styles.userImageView}>
-                        <Text>이미지</Text>
+                        <Image
+                            source={data.userImg}
+                            style={styles.userImage}
+                        />
                     </View>
                     <View style={styles.userIDView}>
                         <Text>유저아이디</Text>
@@ -111,6 +115,11 @@ const styles = StyleSheet.create({
     },
     userImageView: {
         flex:1
+    },
+    userImage: {
+        height: 50,
+        width:50,
+        borderRadius:100
     },
     userIDView: {
         flex:4
