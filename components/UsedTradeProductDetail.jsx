@@ -74,6 +74,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         setCurImageViewerIndex(index)
                     }}
                     firstItem={curImageViewerIndex}
+                    sliderBoxHeight={420}
                 />
                 <StatusBar style="light" />
                 <Text>안녕하세요 {route.params.id}</Text>
