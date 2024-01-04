@@ -77,7 +77,20 @@ export default function UsedTradeProductDetail({navigation, route}) {
                     sliderBoxHeight={420}
                 />
                 <StatusBar style="light" />
-                <Text>안녕하세요 {route.params.id}</Text>
+                <View style={styles.userInfoView}>
+                    <View style={styles.userImageView}>
+                        <Text>이미지</Text>
+                    </View>
+                    <View style={styles.userIDView}>
+                        <Text>유저아이디</Text>
+                        <Text>유저동네</Text>
+                    </View>
+                    <View style={styles.userMannerTempView}>
+                        <Text>매너온도수치이미지</Text>
+                        <Text>매너온도이모티콘</Text>
+                        <Text>매너온도</Text>
+                    </View>
+                </View>
             </ScrollView>
         </View>
     );
@@ -88,4 +101,21 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#212123',
     },
+    userInfoView: {
+        flexDirection: 'row',
+        marginHorizontal:15,
+        paddingVertical:15,
+        borderBottomWidth: 0.25,
+        borderBottomColor: 'gray',
+        justifyContent: "space-between"
+    },
+    userImageView: {
+        flex:1
+    },
+    userIDView: {
+        flex:4
+    },
+    userMannerTempView: {
+        flex:2
+    }
 });
