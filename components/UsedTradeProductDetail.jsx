@@ -18,7 +18,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저1",
             "userTown": "역삼동",
-            "mannerTempImg": "smile",
             "mannerTemp": 48.1
         },
         "2": {
@@ -26,7 +25,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저2",
             "userTown": "잠실동",
-            "mannerTempImg": "smile",
             "mannerTemp": 50.2
         },
         "3": {
@@ -34,7 +32,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저3",
             "userTown": "장지동",
-            "mannerTempImg": "smile",
             "mannerTemp": 56.4
         },
         "4": {
@@ -42,7 +39,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저4",
             "userTown": "위례동",
-            "mannerTempImg": "smile",
             "mannerTemp": 58.0
         },
         "5": {
@@ -50,7 +46,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저5",
             "userTown": "역삼동",
-            "mannerTempImg": "smile",
             "mannerTemp": 63.3
         },
         "6": {
@@ -58,7 +53,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저6",
             "userTown": "구로동",
-            "mannerTempImg": "smile",
             "mannerTemp": 51.8
         },
         "7": {
@@ -66,7 +60,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저7",
             "userTown": "잠실동",
-            "mannerTempImg": "smile",
             "mannerTemp": 55.5
         },
         "8": {
@@ -74,7 +67,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저8",
             "userTown": "역삼동",
-            "mannerTempImg": "smile",
             "mannerTemp": 67.7
         },
         "9": {
@@ -82,7 +74,6 @@ export default function UsedTradeProductDetail({navigation, route}) {
             "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저9",
             "userTown": "잠실동",
-            "mannerTempImg": "smile",
             "mannerTemp": 48.4
         }
     };
@@ -94,15 +85,22 @@ export default function UsedTradeProductDetail({navigation, route}) {
     const data = sample[route.params.id]
 
     let mannerTempColor;
+    let mannerTempImg;
     if (data.mannerTemp >= 0 && data.mannerTemp <= 25) {
         mannerTempColor = 'blue';
+        mannerTempImg = require("../assets/sample-data/user/smile-beam.png")
     } else if (data.mannerTemp > 25 && data.mannerTemp <= 50) {
         mannerTempColor = 'skyblue';
+        mannerTempImg = require("../assets/sample-data/user/smile-beam.png")
     } else if (data.mannerTemp > 50 && data.mannerTemp <= 75) {
         mannerTempColor = 'orange';
+        mannerTempImg = require("../assets/sample-data/user/smile-beam.png")
     } else if (data.mannerTemp > 75 && data.mannerTemp <= 100) {
         mannerTempColor = 'red';
+        mannerTempImg = require("../assets/sample-data/user/smile-beam.png")
     }
+
+
 
     return (
         <View style={styles.container}>
@@ -150,7 +148,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                                 <Text style={{color:mannerTempColor, fontSize: 17, fontWeight: 700}}>{data.mannerTemp}°C</Text>
                                 <Text>bar</Text>
                             </View>
-                            <Text>{data.mannerTempImg}</Text>
+                            <Image source={mannerTempImg} style={styles.mannerTempImage}/>
                         </View>
 
                         <Text>매너온도</Text>
@@ -181,6 +179,10 @@ const styles = StyleSheet.create({
         height: 50,
         width:50,
         borderRadius:100
+    },
+    mannerTempImage: {
+        height: 25,
+        width:25,
     },
     userIDView: {
         flex:4,
