@@ -15,31 +15,67 @@ export default function UsedTradeProductDetail({navigation, route}) {
     const sample = {
         "1": {
             "img": [require("../assets/sample-data/home/sell_product_img1.jpeg"),require("../assets/sample-data/home/sell_product_img2.jpeg")],
-            "userImg": require("../assets/sample-data/user/user_default.jpg")
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
+            "userID": "유저1",
+            "userTown": "역삼동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 48.1
         },
         "2": {
-            "img": [require("../assets/sample-data/home/sell_product_img2.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img2.jpeg")],
+            "userID": "유저2",
+            "userTown": "잠실동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 50.2
         },
         "3": {
-            "img": [require("../assets/sample-data/home/sell_product_img3.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img3.jpeg")],
+            "userID": "유저3",
+            "userTown": "장지동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 56.4
         },
         "4": {
-            "img": [require("../assets/sample-data/home/sell_product_img4.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img4.jpeg")],
+            "userID": "유저4",
+            "userTown": "위례동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 58.0
         },
         "5": {
-            "img": [require("../assets/sample-data/home/sell_product_img5.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img5.jpeg")],
+            "userID": "유저5",
+            "userTown": "역삼동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 63.3
         },
         "6": {
-            "img": [require("../assets/sample-data/home/sell_product_img6.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img6.jpeg")],
+            "userID": "유저6",
+            "userTown": "구로동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 51.8
         },
         "7": {
-            "img": [require("../assets/sample-data/home/sell_product_img7.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img7.jpeg")],
+            "userID": "유저7",
+            "userTown": "잠실동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 55.5
         },
         "8": {
-            "img": [require("../assets/sample-data/home/sell_product_img8.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img8.jpeg")],
+            "userID": "유저8",
+            "userTown": "역삼동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 67.7
         },
         "9": {
-            "img": [require("../assets/sample-data/home/sell_product_img9.jpeg")]
+            "img": [require("../assets/sample-data/home/sell_product_img9.jpeg")],
+            "userID": "유저9",
+            "userTown": "잠실동",
+            "mannerTempImg": "smile",
+            "mannerTemp": 48.4
         }
     };
 
@@ -86,12 +122,12 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         />
                     </View>
                     <View style={styles.userIDView}>
-                        <Text>유저아이디</Text>
-                        <Text>유저동네</Text>
+                        <Text>{data.userID}</Text>
+                        <Text>{data.userTown}</Text>
                     </View>
                     <View style={styles.userMannerTempView}>
-                        <Text>매너온도수치이미지</Text>
-                        <Text>매너온도이모티콘</Text>
+                        <Text>{data.mannerTemp}</Text>
+                        <Text>{data.mannerTempImg}</Text>
                         <Text>매너온도</Text>
                     </View>
                 </View>
