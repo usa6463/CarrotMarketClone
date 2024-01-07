@@ -23,6 +23,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "2": {
             "img": [require("../assets/sample-data/home/sell_product_img2.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저2",
             "userTown": "잠실동",
             "mannerTempImg": "smile",
@@ -30,6 +31,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "3": {
             "img": [require("../assets/sample-data/home/sell_product_img3.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저3",
             "userTown": "장지동",
             "mannerTempImg": "smile",
@@ -37,6 +39,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "4": {
             "img": [require("../assets/sample-data/home/sell_product_img4.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저4",
             "userTown": "위례동",
             "mannerTempImg": "smile",
@@ -44,6 +47,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "5": {
             "img": [require("../assets/sample-data/home/sell_product_img5.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저5",
             "userTown": "역삼동",
             "mannerTempImg": "smile",
@@ -51,6 +55,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "6": {
             "img": [require("../assets/sample-data/home/sell_product_img6.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저6",
             "userTown": "구로동",
             "mannerTempImg": "smile",
@@ -58,6 +63,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "7": {
             "img": [require("../assets/sample-data/home/sell_product_img7.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저7",
             "userTown": "잠실동",
             "mannerTempImg": "smile",
@@ -65,6 +71,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "8": {
             "img": [require("../assets/sample-data/home/sell_product_img8.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저8",
             "userTown": "역삼동",
             "mannerTempImg": "smile",
@@ -72,6 +79,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
         },
         "9": {
             "img": [require("../assets/sample-data/home/sell_product_img9.jpeg")],
+            "userImg": require("../assets/sample-data/user/user_default.jpg"),
             "userID": "유저9",
             "userTown": "잠실동",
             "mannerTempImg": "smile",
@@ -122,8 +130,8 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         />
                     </View>
                     <View style={styles.userIDView}>
-                        <Text>{data.userID}</Text>
-                        <Text>{data.userTown}</Text>
+                        <Text style={{fontSize:16, color: "white", paddingBottom:8}}>{data.userID}</Text>
+                        <Text style={{fontSize:13, color:"gray"}}>{data.userTown}</Text>
                     </View>
                     <View style={styles.userMannerTempView}>
                         <Text>{data.mannerTemp}</Text>
@@ -158,7 +166,8 @@ const styles = StyleSheet.create({
         borderRadius:100
     },
     userIDView: {
-        flex:4
+        flex:4,
+        marginLeft: 6
     },
     userMannerTempView: {
         flex:2
