@@ -93,6 +93,17 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     const data = sample[route.params.id]
 
+    let mannerTempColor;
+    if (data.mannerTemp >= 0 && data.mannerTemp <= 25) {
+        mannerTempColor = 'blue';
+    } else if (data.mannerTemp > 25 && data.mannerTemp <= 50) {
+        mannerTempColor = 'skyblue';
+    } else if (data.mannerTemp > 50 && data.mannerTemp <= 75) {
+        mannerTempColor = 'orange';
+    } else if (data.mannerTemp > 75 && data.mannerTemp <= 100) {
+        mannerTempColor = 'red';
+    }
+
     return (
         <View style={styles.container}>
             <View>
@@ -134,8 +145,14 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         <Text style={{fontSize:13, color:"gray"}}>{data.userTown}</Text>
                     </View>
                     <View style={styles.userMannerTempView}>
-                        <Text>{data.mannerTemp}</Text>
-                        <Text>{data.mannerTempImg}</Text>
+                        <View style={styles.userMannerTempDetailView}>
+                            <View>
+                                <Text style={{color:mannerTempColor, fontSize: 17, fontWeight: 700}}>{data.mannerTemp}°C</Text>
+                                <Text>bar</Text>
+                            </View>
+                            <Text>{data.mannerTempImg}</Text>
+                        </View>
+
                         <Text>매너온도</Text>
                     </View>
                 </View>
@@ -171,5 +188,8 @@ const styles = StyleSheet.create({
     },
     userMannerTempView: {
         flex:2
+    },
+    userMannerTempDetailView: {
+        flexDirection: "row"
     }
 });
