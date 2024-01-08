@@ -159,7 +159,10 @@ export default function UsedTradeProductDetail({navigation, route}) {
                             <Image source={mannerTempImg} style={styles.mannerTempImage}/>
                         </View>
 
-                        <Text>매너온도</Text>
+                        <View style={{flexDirection:'row', justifyContent:'flex-end', marginTop: 8}}>
+                            <Text style={{color:'#5C6066', textDecorationLine: 'underline', fontSize:12}}>매너온도</Text>
+                        </View>
+
                     </View>
                 </View>
             </ScrollView>
