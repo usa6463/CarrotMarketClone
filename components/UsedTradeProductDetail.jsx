@@ -146,8 +146,15 @@ export default function UsedTradeProductDetail({navigation, route}) {
                     <View style={styles.userMannerTempView}>
                         <View style={styles.userMannerTempDetailView}>
                             <View>
-                                <Text style={{color:mannerTempColor, fontSize: 17, fontWeight: 700}}>{data.mannerTemp}°C</Text>
-                                <Progress.Bar progress={data.mannerTemp*0.01} width={55} />
+                                <Text style={{color:mannerTempColor, fontSize: 17, fontWeight: 700, marginBottom:3}}>{data.mannerTemp}°C</Text>
+                                <Progress.Bar
+                                    progress={data.mannerTemp*0.01}
+                                    width={55}
+                                    unfilledColor={'#34373D'}
+                                    borderWidth={0}
+                                    height={4}
+                                    color={mannerTempColor}
+                                />
                             </View>
                             <Image source={mannerTempImg} style={styles.mannerTempImage}/>
                         </View>
