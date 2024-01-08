@@ -192,6 +192,7 @@ const styles = StyleSheet.create({
         flex:2
     },
     userMannerTempDetailView: {
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "space-around"
     }
 });
