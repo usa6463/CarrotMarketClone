@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
 import ImageViewer from 'react-native-image-zoom-viewer';
 import ImageViewerHeader from "./ImageViewerHeader";
+import * as Progress from 'react-native-progress';
 
 export default function UsedTradeProductDetail({navigation, route}) {
 
@@ -146,7 +147,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         <View style={styles.userMannerTempDetailView}>
                             <View>
                                 <Text style={{color:mannerTempColor, fontSize: 17, fontWeight: 700}}>{data.mannerTemp}°C</Text>
-                                <Text>bar</Text>
+                                <Progress.Bar progress={data.mannerTemp*0.01} width={55} />
                             </View>
                             <Image source={mannerTempImg} style={styles.mannerTempImage}/>
                         </View>
