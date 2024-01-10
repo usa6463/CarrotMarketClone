@@ -105,22 +105,20 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     return (
         <View style={styles.container}>
-            <View>
-                <Modal visible={imageViewer} transparent={true} animationType={"slide"}>
-                    <ImageViewer
-                        imageUrls={data.img.map((element)=>({
-                            props: {
-                                source: element
-                            }
-                        }))}
-                        index={curImageViewerIndex}
-                        enableSwipeDown={true}
-                        onCancel = {()=>setImageViewer(false)}
-                        onChange = {(index) =>setCurImageViewerIndex(index)}
-                        renderHeader = {() => ImageViewerHeader(onExitButtonClick)}
-                    />
-                </Modal>
-            </View>
+            <Modal visible={imageViewer} transparent={true} animationType={"slide"}>
+                <ImageViewer
+                    imageUrls={data.img.map((element)=>({
+                        props: {
+                            source: element
+                        }
+                    }))}
+                    index={curImageViewerIndex}
+                    enableSwipeDown={true}
+                    onCancel = {()=>setImageViewer(false)}
+                    onChange = {(index) =>setCurImageViewerIndex(index)}
+                    renderHeader = {() => ImageViewerHeader(onExitButtonClick)}
+                />
+            </Modal>
             <ScrollView>
                 <SliderBox
                     images={data.img}
