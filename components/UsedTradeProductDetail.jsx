@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Modal, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Image, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -10,6 +10,8 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     const [imageViewer, setImageViewer] = useState(false)
     const [curImageViewerIndex, setCurImageViewerIndex] = useState(0)
+
+    const [mannerTempDescVisible, setMannerTempDescVisible] = useState(false)
 
     // TODO 원래는 route.params.id 으로 글 번호를 받아오고 이 글번호로 API 호출하여 정보 받아와야 한다.
 
@@ -119,6 +121,26 @@ export default function UsedTradeProductDetail({navigation, route}) {
                     renderHeader = {() => ImageViewerHeader(onExitButtonClick)}
                 />
             </Modal>
+
+            <Modal
+                visible={mannerTempDescVisible}
+                transparent={true}
+                animationType={"slide"}
+                onRequestClose={() => {
+                    setMannerTempDescVisible(!mannerTempDescVisible);
+                }}
+            >
+                <View
+                    style={{flex:1}}
+                    onTouchEnd={() => setMannerTempDescVisible(false)}
+                >
+                    <View style={{width:250, height:100, backgroundColor:'white', position: 'absolute', top: 500, left: 150}}>
+                        <Text style={{fontSize:13, color:'black'}}>매너온도는 당근 사용자로부터 받은 칭찬, 후기, 비매너 평가, 운영자 제재 등을 종합해서 만든 매너 지표예요.</Text>
+                    </View>
+                </View>
+
+            </Modal>
+
             <ScrollView>
                 <SliderBox
                     images={data.img}
@@ -158,7 +180,9 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         </View>
 
                         <View style={{flexDirection:'row', justifyContent:'flex-end', marginTop: 8}}>
-                            <Text style={{color:'#5C6066', textDecorationLine: 'underline', fontSize:12}}>매너온도</Text>
+                            <TouchableOpacity onPress={()=>{setMannerTempDescVisible(true)}}>
+                                <Text style={{color:'#5C6066', textDecorationLine: 'underline', fontSize:12}}>매너온도</Text>
+                            </TouchableOpacity>
                         </View>
 
                     </View>
