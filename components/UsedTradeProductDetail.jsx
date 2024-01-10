@@ -107,7 +107,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     return (
         <View style={styles.container}>
-            <Modal visible={imageViewer} transparent={true} animationType={"slide"}>
+            <Modal visible={imageViewer} transparent={true} animationType={"fade"}>
                 <ImageViewer
                     imageUrls={data.img.map((element)=>({
                         props: {
@@ -125,7 +125,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
             <Modal
                 visible={mannerTempDescVisible}
                 transparent={true}
-                animationType={"slide"}
+                animationType={"fade"}
                 onRequestClose={() => {
                     setMannerTempDescVisible(!mannerTempDescVisible);
                 }}
@@ -134,8 +134,38 @@ export default function UsedTradeProductDetail({navigation, route}) {
                     style={{flex:1}}
                     onTouchEnd={() => setMannerTempDescVisible(false)}
                 >
-                    <View style={{width:250, height:100, backgroundColor:'white', position: 'absolute', top: 500, left: 150}}>
-                        <Text style={{fontSize:13, color:'black'}}>매너온도는 당근 사용자로부터 받은 칭찬, 후기, 비매너 평가, 운영자 제재 등을 종합해서 만든 매너 지표예요.</Text>
+                    <View style={{
+                        backgroundColor: 'transparent',
+                        position: 'absolute',
+                        top: 491,
+                        left: 370,
+                        borderStyle: 'solid',
+                        borderTopWidth: 1,
+                        borderRightWidth: 3,
+                        borderBottomWidth: 8,
+                        borderLeftWidth: 7,
+                        borderTopColor: 'transparent',
+                        borderRightColor: 'transparent',
+                        borderBottomColor: 'white',
+                        borderLeftColor: 'transparent',
+                    }}>
+                    </View>
+
+                    <View style={{
+                        width:260,
+                        height:70,
+                        backgroundColor:'white',
+                        position: 'absolute',
+                        top: 500,
+                        left: 130,
+                        borderRadius: 5
+                    }}>
+                        <Text style={{
+                            fontSize:13,
+                            color:'black',
+                            margin:10,
+                            fontWeight: 'bold'
+                        }}>매너온도는 당근 사용자로부터 받은 칭찬, 후기, 비매너 평가, 운영자 제재 등을 종합해서 만든 매너 지표예요.</Text>
                     </View>
                 </View>
 
