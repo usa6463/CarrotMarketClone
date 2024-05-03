@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "CarrotMarketClone",
-    "slug": "CarrotMarketClone",
+    "slug": "carrotmarket",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/carrot.png",
@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.usa6463.carrotmarket"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +26,18 @@
     },
     "web": {
       "favicon": "./assets/carrot.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "52bbdcc0-6834-42a3-b165-d3b6688bcdba"
+      }
+    },
+    "owner": "usa6463",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/52bbdcc0-6834-42a3-b165-d3b6688bcdba"
     }
   }
 }

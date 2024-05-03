@@ -1,5 +1,6 @@
+import Modal from "react-native-modal";
 import React, {useState} from 'react';
-import {Image, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Button, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SliderBox } from "react-native-image-slider-box";
 import ImageViewer from 'react-native-image-zoom-viewer';
@@ -10,8 +11,11 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
     const [imageViewer, setImageViewer] = useState(false)
     const [curImageViewerIndex, setCurImageViewerIndex] = useState(0)
-
     const [mannerTempDescVisible, setMannerTempDescVisible] = useState(false)
+
+    const toggleModal = () => {
+        setMannerTempDescVisible(!mannerTempDescVisible);
+    };
 
     // TODO 원래는 route.params.id 으로 글 번호를 받아오고 이 글번호로 API 호출하여 정보 받아와야 한다.
 
@@ -104,10 +108,16 @@ export default function UsedTradeProductDetail({navigation, route}) {
     }
 
 
-
     return (
         <View style={styles.container}>
-            <Modal visible={imageViewer} transparent={true} animationType={"fade"}>
+            <Modal
+                visible={imageViewer}
+                // transparent={true}
+                // animationIn={"fadeIn"}
+                // animationInTiming={1000}
+                // animationOut={"fadeOut"}
+                // animationOutTiming={1000}
+            >
                 <ImageViewer
                     imageUrls={data.img.map((element)=>({
                         props: {
@@ -124,51 +134,55 @@ export default function UsedTradeProductDetail({navigation, route}) {
 
             <Modal
                 visible={mannerTempDescVisible}
-                transparent={true}
-                animationType={"fade"}
-                onRequestClose={() => {
-                    setMannerTempDescVisible(!mannerTempDescVisible);
-                }}
+                animationIn={"lightSpeedIn"}
+                // transparent={true}
+                // animationInTiming={600} // 애니메이션 속도 설정
             >
-                <View
-                    style={{flex:1}}
-                    onTouchEnd={() => setMannerTempDescVisible(false)}
-                >
-                    <View style={{
-                        backgroundColor: 'transparent',
-                        position: 'absolute',
-                        top: 491,
-                        left: 370,
-                        borderStyle: 'solid',
-                        borderTopWidth: 1,
-                        borderRightWidth: 3,
-                        borderBottomWidth: 8,
-                        borderLeftWidth: 7,
-                        borderTopColor: 'transparent',
-                        borderRightColor: 'transparent',
-                        borderBottomColor: 'white',
-                        borderLeftColor: 'transparent',
-                    }}>
-                    </View>
+                {/*<View*/}
+                {/*    style={{ flex:1 }}*/}
+                {/*    // onTouchEnd={() => setMannerTempDescVisible(false)}*/}
+                {/*>*/}
+                {/*    /!*<View style={{*!/*/}
+                {/*    /!*    backgroundColor: 'transparent',*!/*/}
+                {/*    /!*    position: 'absolute',*!/*/}
+                {/*    /!*    top: 471,*!/*/}
+                {/*    /!*    left: 360,*!/*/}
+                {/*    /!*    borderStyle: 'solid',*!/*/}
+                {/*    /!*    borderTopWidth: 1,*!/*/}
+                {/*    /!*    borderRightWidth: 3,*!/*/}
+                {/*    /!*    borderBottomWidth: 8,*!/*/}
+                {/*    /!*    borderLeftWidth: 7,*!/*/}
+                {/*    /!*    borderTopColor: 'transparent',*!/*/}
+                {/*    /!*    borderRightColor: 'transparent',*!/*/}
+                {/*    /!*    borderBottomColor: 'white',*!/*/}
+                {/*    /!*    borderLeftColor: 'transparent',*!/*/}
+                {/*    /!*    flex:1*!/*/}
+                {/*    /!*}}>*!/*/}
+                {/*    /!*</View>*!/*/}
 
-                    <View style={{
-                        width:260,
-                        height:70,
-                        backgroundColor:'white',
-                        position: 'absolute',
-                        top: 500,
-                        left: 130,
-                        borderRadius: 5
-                    }}>
-                        <Text style={{
-                            fontSize:13,
-                            color:'black',
-                            margin:10,
-                            fontWeight: 'bold'
-                        }}>매너온도는 당근 사용자로부터 받은 칭찬, 후기, 비매너 평가, 운영자 제재 등을 종합해서 만든 매너 지표예요.</Text>
-                    </View>
+                {/*    /!*<View style={{*!/*/}
+                {/*    /!*    width:260,*!/*/}
+                {/*    /!*    height:70,*!/*/}
+                {/*    /!*    backgroundColor:'white',*!/*/}
+                {/*    /!*    position: 'absolute',*!/*/}
+                {/*    /!*    top: 480,*!/*/}
+                {/*    /!*    left: 120,*!/*/}
+                {/*    /!*    borderRadius: 5*!/*/}
+                {/*    /!*}}>*!/*/}
+                {/*    /!*    <Text style={{*!/*/}
+                {/*    /!*        fontSize:13,*!/*/}
+                {/*    /!*        color:'black',*!/*/}
+                {/*    /!*        margin:10,*!/*/}
+                {/*    /!*        fontWeight: 'bold'*!/*/}
+                {/*    /!*    }}>매너온도는 당근 사용자로부터 받은 칭찬, 후기, 비매너 평가, 운영자 제재 등을 종합해서 만든 매너 지표예요.</Text>*!/*/}
+                {/*    /!*</View>*!/*/}
+                {/*    <Button title="Hide modal" onPress={()=>setMannerTempDescVisible(!mannerTempDescVisible)} />*/}
+                {/*</View>*/}
+                <View style={{ flex: 1 }}>
+                    <Text style={{'color':'white'}}>Hello!</Text>
+
+                    <Button title="Hide modal" onPress={toggleModal} />
                 </View>
-
             </Modal>
 
             <ScrollView>
@@ -210,7 +224,7 @@ export default function UsedTradeProductDetail({navigation, route}) {
                         </View>
 
                         <View style={{flexDirection:'row', justifyContent:'flex-end', marginTop: 8}}>
-                            <TouchableOpacity onPress={()=>{setMannerTempDescVisible(true)}}>
+                            <TouchableOpacity onPress={()=>{setMannerTempDescVisible(!mannerTempDescVisible)}}>
                                 <Text style={{color:'#5C6066', textDecorationLine: 'underline', fontSize:12}}>매너온도</Text>
                             </TouchableOpacity>
                         </View>
